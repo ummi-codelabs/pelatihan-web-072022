@@ -31,9 +31,12 @@ Route::get('/tes-kedua', function() {
 });
 
 // cara akses di browser: localhost:8000/mahasiswa
-Route::get('/mahasiswa', [StudentController::class, 'index']);
+Route::get('/mahasiswa', [StudentController::class, 'index'])->name('student.index');
 // cara akses di browser: localhost:8000/mahasiswa/show/3
 Route::get('/mahasiswa/show/{id}', [StudentController::class, 'show']);
+Route::get('/mahasiswa/create', [StudentController::class, 'create'])->name('student.create');
+Route::post('/mahasiswa/store', [StudentController::class, 'store'])->name('student.store');
+
 
 Route::get('/product', [ProductController::class, 'index']);
 Route::get('/product/show/{id}', [ProductController::class, 'show']);
