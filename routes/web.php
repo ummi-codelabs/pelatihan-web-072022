@@ -37,6 +37,9 @@ Route::get('/mahasiswa/show/{id}', [StudentController::class, 'show']);
 Route::get('/mahasiswa/create', [StudentController::class, 'create'])->name('student.create');
 Route::post('/mahasiswa/store', [StudentController::class, 'store'])->name('student.store');
 
+Route::get('/mahasiswa/{id}/edit', [StudentController::class, 'edit'])->name('student.edit');
+Route::put('/mahasiswa/{id}/update', [StudentController::class, 'update'])->name('student.update');
+Route::delete('/mahasiswa/{id}/destroy', [StudentController::class, 'destroy'])->name('student.destroy');
 
 Route::get('/product', [ProductController::class, 'index']);
 Route::get('/product/show/{id}', [ProductController::class, 'show']);
